@@ -10,7 +10,7 @@ const addOption = (e) => {
     e.preventDefault()
     const input = document.querySelector("input")
     options.push(input.value)
-    alert(`option ${input.value} added`)
+    alert(`option "${input.value}" added`)
     input.value = ""
 
 }
