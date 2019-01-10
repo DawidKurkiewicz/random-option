@@ -1,14 +1,24 @@
-const options = ["option 1", "option 2"]
+const options = []
+
+
+const showOne = () => {
+    const index = Math.floor(Math.random() * options.length)
+    document.querySelector("h1").textContent = options[index]
+}
 
 const addOption = (e) => {
     e.preventDefault()
-options.push(document,querySelector("input")
-.value)
+    const input = document.querySelector("input")
+    options.push(input.value)
+    alert(`option ${input.value} added`)
+    input.value = ""
+
 }
 
 const resetOptions = (e) => {
     e.preventDefault()
     options.length = 0
+    document.querySelector("h1").textContent = ""
 }
 
 const showOptions = () => {
@@ -22,3 +32,6 @@ document.querySelector(".clean")
 
 document.querySelector(".showOptions")
     .addEventListener("click", showOptions)
+
+document.querySelector(".showOne")
+    .addEventListener("click", showOne)
